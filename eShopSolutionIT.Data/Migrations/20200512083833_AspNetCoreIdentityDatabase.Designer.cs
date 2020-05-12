@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using eShopSolutionIT.Data.EF;
 
 namespace eShopSolutionIT.Data.Migrations
 {
     [DbContext(typeof(EShopDbContext))]
-    partial class EShopDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200512083833_AspNetCoreIdentityDatabase")]
+    partial class AspNetCoreIdentityDatabase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -92,13 +94,6 @@ namespace eShopSolutionIT.Data.Migrations
                     b.HasKey("UserId", "RoleId");
 
                     b.ToTable("AppUserRoles");
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
-                            RoleId = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc")
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
@@ -161,7 +156,7 @@ namespace eShopSolutionIT.Data.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Description")
+                    b.Property<string>("Decription")
                         .IsRequired()
                         .HasColumnType("nvarchar(200)")
                         .HasMaxLength(200);
@@ -175,16 +170,6 @@ namespace eShopSolutionIT.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AppRoles");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"),
-                            ConcurrencyStamp = "203d8c15-f6f2-49ce-bab1-6abcb8303013",
-                            Description = "Administrator role",
-                            Name = "admin",
-                            NormalizedName = "admin"
-                        });
                 });
 
             modelBuilder.Entity("eShopSolutionIT.Data.Entities.AppUser", b =>
@@ -251,27 +236,6 @@ namespace eShopSolutionIT.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AppUsers");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "8f8df454-992d-4014-b00c-50e368ac965d",
-                            Dob = new DateTime(1996, 9, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "levinhit.tdm@gmail.com",
-                            EmailConfirmed = true,
-                            FirstName = "Le",
-                            LastName = "Vinh",
-                            LockoutEnabled = false,
-                            NormalizedEmail = "levinhit.tdm@gmail.com",
-                            NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBp3aTEyHWEUA6L2jRBoC0K7za/0OgDId/rXHeaGenyDCiPm4uXsswdKqQv5ST4rNg==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "",
-                            TwoFactorEnabled = false,
-                            UserName = "admin"
-                        });
                 });
 
             modelBuilder.Entity("eShopSolutionIT.Data.Entities.Cart", b =>
@@ -520,7 +484,7 @@ namespace eShopSolutionIT.Data.Migrations
                     b.Property<DateTime>("OrderDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 5, 12, 15, 48, 23, 217, DateTimeKind.Local).AddTicks(2106));
+                        .HasDefaultValue(new DateTime(2020, 5, 12, 15, 38, 32, 240, DateTimeKind.Local).AddTicks(8781));
 
                     b.Property<string>("ShipAddress")
                         .IsRequired()
@@ -616,7 +580,7 @@ namespace eShopSolutionIT.Data.Migrations
                         new
                         {
                             Id = 1,
-                            DateCreated = new DateTime(2020, 5, 12, 15, 48, 23, 262, DateTimeKind.Local).AddTicks(4578),
+                            DateCreated = new DateTime(2020, 5, 12, 15, 38, 32, 283, DateTimeKind.Local).AddTicks(4519),
                             OriginalPrice = 100000m,
                             Price = 200000m,
                             Stock = 0,

@@ -8,6 +8,7 @@
 - Microsoft.EntityFrameworkCore.Design
 - Microsoft.Extensions.Configuration.FileExtensions
 - Microsoft.Extensions.Configuration.Json
+- Microsoft.AspNetCore.Identity.EntityFrameworkCore
 ## Youtube Tutorial
 - https://www.youtube.com/playlist?list=PLRhlTlpDUWsyN_FiVQrDWMtHix_E2A_UD
 ## How to congifure and run

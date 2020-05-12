@@ -1,7 +1,7 @@
-﻿using System;
+﻿using eShopSolutionIT.Data.Enums;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Transactions;
 
 namespace eShopSolutionIT.Data.Entities
 {
@@ -16,5 +16,9 @@ namespace eShopSolutionIT.Data.Entities
         public string Message { set; get; }
         public TransactionStatus Status { set; get; }
         public int Provider { set; get; }
+
+        public Guid UserId { get; set; }
+
+        public AppUser AppUser { get; set; }
     }
 }
