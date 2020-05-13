@@ -1,9 +1,8 @@
-﻿using eShopSolutionIT.Application.Catalog.Products.Dtos;
-using eShopSolutionIT.Application.Catalog.Products.Dtos.Manage;
-using eShopSolutionIT.Application.Dtos;
-using eShopSolutionIT.Data.EF;
+﻿using eShopSolutionIT.Data.EF;
+using eShopSolutionIT.ViewModels.Catalog.Products;
+using eShopSolutionIT.ViewModels.Catalog.Products.Public;
+using eShopSolutionIT.ViewModels.Common;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,7 +18,7 @@ namespace eShopSolutionIT.Application.Catalog.Products
             _context = context;
         }
 
-        public async Task<PagedResult<ProductViewModel>> GetAllByCategoryId(Dtos.Public.GetProductPagingRequest request)
+        public async Task<PagedResult<ProductViewModel>> GetAllByCategoryId(GetProductPagingRequest request)
         {
             // 1. Select join
             var query = from p in _context.Products
